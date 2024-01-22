@@ -1,0 +1,143 @@
+.profile__wrapper-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile__wrapper-top a,
+.profile__wrapper-top p {
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.statements__wrapper {
+    margin-top: 25px;
+    height: 620px;
+    overflow-y: auto;
+}
+
+.statements_inner {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.statements_block {
+    border-radius: 13px;
+    background: #3C3C3C;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    height: 200px;
+    position: relative;
+}
+
+.statements_block-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.statements_block-top h2 {
+    max-width: 205px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    color: #FFF;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: normal;
+    position: relative;
+    padding-left: 10px;
+}
+
+.statements_block-middle p:before,
+.statements_block-top h2:before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 2px;
+    height: 100%;
+    background: #4250D4;
+    left: 0;
+    border-radius: 50px;
+}
+
+.statements_block-top span {
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+
+    /*Потом*/
+}
+
+.statements_block-middle p {
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: normal;
+    position: relative;
+    padding-left: 10px;
+    max-width: 315px;
+    max-height: 105px;
+    overflow-y: auto;
+    word-wrap: break-word;
+}
+
+.statements_block-middle p:before {
+    background: #D44265;
+}
+
+.statements_block-middle-description {
+}
+
+.statements_block-bottom {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 15px;
+    justify-content: space-between;
+    width: 358px;
+}
+
+.statements_block-bottom-button {
+    display: flex;
+    gap: 16px;
+}
+
+.statements_block-bottom-button form {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    opacity: .8;
+    transition: all .2s;
+}
+
+.statements_block-bottom-button form:hover {
+    opacity: 1;
+}
+
+.statements_block-bottom-button form button {
+    color: #D44265;
+    font-family: Inter, serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: normal;
+    border: transparent;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.id {
+    color: #A49D9D;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

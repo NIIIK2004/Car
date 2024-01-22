@@ -1,0 +1,57 @@
+body {
+    background: #212121;
+    font-family: 'Inter', sans-serif;
+    color: #dfdfdf;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.subtitle {
+    font-size: 18px;
+}
+
+.title {
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: normal;
+}
+
+label {
+    font-size: 14px;
+}
+
+input {
+    font-family: 'Inter', sans-serif;
+    border: 1px solid #525252;
+    background: transparent;
+    color: unset;
+    outline: none;
+    border-radius: 13px;
+    padding: 13px 15px;
+    font-size: 17px;
+}
+
+input::placeholder {
+    color: #525252;
+}
+
+span {
+    display: block;
+}
+
+textarea {
+    font-family: 'Inter', sans-serif;
+    padding: 20px 30px;
+    border: 1px solid #525252;
+    background: transparent;
+    color: unset;
+    outline: none;
+    border-radius: 13px;
+    font-size: 17px;
+    resize: none;
+}
+

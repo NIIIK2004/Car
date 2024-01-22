@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/admin/adminAllStatements.css}">
+    <title>Панель Администратора</title>
+</head>
+<body>
+<div class="section_profile">
+    <div class="container">
+        <div class="profile__wrapper">
+            <div class="profile__wrapper-top">
+                <h1 class="title" th:text="'Привет ' + ${user.name}"></h1>
+                <p class="title">Панель администратора</p>
+            </div>
+
+            <h2 class="subtitle" style="margin-top: 25px">Все заявки</h2>
+
+            <div class="statements__wrapper">
+                <div class="statements_inner">
+                    <div class="statements_block" th:each="statements : ${statement}">
+                        <div class="statements_block-top">
+                            <h2 th:text="'ФИО: ' + ${statements.user.surname + ' ' + statements.user.name +' ' + statements.user.othesctvo}"></h2>
+                            <span th:text="${statements.status.getRussianText()}"></span>
+                        </div>
+                        <div class="statements_block-middle">
+                            <p class="statements_block-middle-description"
+                               th:text=" '“Описание:' + ${statements.description} + '”' "></p>
+                        </div>
+                        <div class="statements_block-bottom">
+                            <div class="statements_block-bottom-button">
+
+                                <form th:action="@{'/statements/updateStatus/' + ${statements.id}}" method="post">
+                                    <input type="hidden" name="status" value="CONFIRMED">
+                                    <img src="/images/done-icon.svg" alt="">
+                                    <button style="color: #38EA8A" type="submit">Одобрить</button>
+                                </form>
+                                <form th:action="@{'/statements/updateStatus/' + ${statements.id}}" method="post">
+                                    <input type="hidden" name="status" value="REJECTED">
+                                    <img src="/images/trash-icon.svg" alt="">
+                                    <button type="submit">Отказать</button>
+                                </form>
+
+                            </div>
+                            <span class="id" th:text="${statements.getRegistrationNumberCar()} + ' | ' + 'ID: ' + ${statements.id}"></span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+.section_registration {
+
+}
+
+.registration__wrapper {
+    max-width: 800px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: #2f2f2f8a;
+    border-radius: 25px;
+    padding: 25px;
+}
+
+.registration__wrapper form {
+    margin-top: 25px;
+}
+
+.registration__wrapper div {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.auth__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 30px;
+    align-items: end;
+}
+
+.auth__form div span {
+    color: #C63E3E;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.reg_title {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.auth_button {
+    border: 1px solid #525252;
+    background: transparent;
+    color: unset;
+    outline: none;
+    border-radius: 13px;
+    padding: 13px 10px;
+    font-size: 17px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    width: 385px;
+    height: 49px;
+
+    transition: all .3s;
+}
+
+.auth_button:hover {
+    border: 1px solid transparent;
+    background: #c63e3e;
+    color: unset;
+}
+
+
+
+
+
+
+
+
+
+
+
+

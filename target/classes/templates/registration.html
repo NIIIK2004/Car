@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <title>Регистрация</title>
+</head>
+<body>
+<div class="section_registration">
+    <div class="container">
+        <div class="registration__wrapper">
+            <h1 class="subtitle reg_title">Регистрация</h1>
+            <form method="POST" class="auth__form" th:action="@{/registration/save}" th:object="${user}">
+                <div>
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" th:field="*{name}" placeholder="Например Никита =)">
+                    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+                </div>
+
+                <div>
+                    <label for="surname">Ваша фамилия</label>
+                    <input type="text" id="surname" th:field="*{surname}" placeholder="Например Мешков =)">
+                    <span th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></span>
+                </div>
+
+                <div>
+                    <label for="othesctvo">Ваше отчество</label>
+                    <input type="text" id="othesctvo" th:field="*{othesctvo}" placeholder="Например Валерьевич =)">
+                    <span th:if="${#fields.hasErrors('othesctvo')}" th:errors="*{othesctvo}"></span>
+                </div>
+
+                <div>
+                    <label for="tel">Ваш номер телефона</label>
+                    <input type="number" id="tel" th:field="*{telefon}" placeholder="Начните с +7 я прошу вас">
+                    <span th:if="${#fields.hasErrors('telefon')}" th:errors="*{telefon}"></span>
+
+                </div>
+
+                <div>
+                    <label for="email">Ваша почта</label>
+                    <input type="email" id="email" th:field="*{email}" placeholder="Тут почту надо указать">
+                    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+                </div>
+
+                <div>
+                    <label for="username">Придумайте логин</label>
+                    <input type="text" id="username" th:field="*{username}" placeholder="Например уже не буду предлагать">
+                    <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
+                </div>
+
+                <div>
+                    <label for="password">Придумайте пароль</label>
+                    <input type="password" id="password" th:field="*{password}" placeholder="Ваше дело, но более 6 символов">
+                    <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+                </div>
+
+                <button class="auth_button" type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
